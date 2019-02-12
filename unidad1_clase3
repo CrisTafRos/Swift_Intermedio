@@ -1,0 +1,156 @@
+/* Documento: Unidad I.playground
+ * Autor: Cristian Tafolla Rosales
+ * Asignatura: Swift Intermedio
+ * Semestre: 2019 - 2
+ * Clase: 3 */
+
+import UIKit
+
+/* Estructuras de control de selección.
+ 
+ * En estas estructuras nosotros podemos tomar decisiones evaluando una expresión lógica,
+ * que en pocas palabras es una combinación de constantes, variables o funciones, y según
+ * el resultado se realizará una acción u otra.
+ 
+ * Ese resultado es un valor booleano.
+ 
+ * Estas estructuras selectivas pueden ser:
+ * · Simples
+ * · Dobles
+ * · Múltiples
+ 
+ * Operadores relacionales: Símbolos ocupados para comparar dos valores
+ 
+ * Operador         Significado
+ * ==               Igual que
+ * >                Mayor que
+ * >=               Mayor o igual que
+ * <                Menor que
+ * <=               Menor o igual que
+ * !=               Diferente de
+ 
+ * Alternativa Simple
+ 
+ * También se le conoce como si - entonces y ejecuta una acción al cumplir una condición.
+ * Un ejemplo sencillo: "SI esta nublado, ENTONCES lloverá"
+ 
+ * Si la condición es verdadera, entonces se ejecuta la acción.
+ * En caso contrario, no hará nada.
+ 
+ * Veamos el siguiente ejemplo: */
+
+var minutosTranscurridos = 15
+
+if minutosTranscurridos <= 20 {
+    print("OK, tienes tu asistencia.")
+}
+
+/* Alternativa Doble
+ 
+ * A diferencia del ejemplo anterior, este no está tan limitado y permite elegir entre
+ * dos opciones o alternativas posibles, según se cumpla o no la condicion.
+ 
+ * Si la condición es verdadera, entonces se ejecutará una acción.
+ * De lo contrario, se ejecutará otra.
+ 
+ * Veamos el siguiente ejemplo: */
+
+if minutosTranscurridos <= 20 {
+    print("OK, tienes tu asistencia.")
+} else {
+    print("Tienes retardo.")
+}
+
+/* También podemos declarar más bloques de código para evaluar cierto número de
+ * condiciones, tal como se puede ver en el siguiente ejemplo: */
+
+minutosTranscurridos = 62
+
+if minutosTranscurridos <= 20 {
+    print("OK, tienes tu asistencia.")
+} else if minutosTranscurridos <= 60{
+    print("Tienes retardo.")
+} else {
+    print("Rayos. Al menos viniste y tienes salud.")
+}
+
+/* Alternativa Múltiple
+ 
+ * En ocasiones se necesita que existan más de dos opciones posibles. Claro que se
+ * podría solucionar como en el caso anterior, pero al ser muchas opciones puede ser
+ * un problema de escritura y legibilidad.
+ 
+ * La estructura de decisión múltiple, o caso de, permitirá que evaluemos una expresión que
+ * podrá tomar diversos valores distintos. Según sea el caso, se realizará alguna de las
+ * acciones posibles.
+ 
+ * Véase el siguiente ejemplo: */
+
+let semestre = 5
+
+switch semestre {
+    case 1:
+        print("Tus materias son: Algoritmos, Algebra Lineal, Info I")
+    case 3:
+        print("Tus materias son: Derecho, Estructura de datos, Info III")
+    case 5:
+        print("Tus materias son: Finanzas Coorporativas, Mates Discretas, Info V")
+    default:
+        print("Posiblemente debas alguna materia aún")
+}
+
+/* También podemos evaluar múltiples condiciones a la vez: */
+
+let letrita = "z"
+
+switch letrita {
+    case "a", "e", "i", "o", "u":
+        print("Es una vocal")
+    default:
+        print("Es una consonante")
+}
+
+/* O incluso podemos ocupar un intervalo, al trabajar con números: */
+
+let edad: Int = 18
+
+switch edad {
+    case 0...5:
+        print("El paciente está en la primer infancia.")
+    case 6...11:
+        print("El paciente es un infante.")
+    case 12...18:
+        print("El paciente es un adolescente.")
+    case 18...59:
+        print("El paciente es un adulto.")
+    default:
+        print("El paciente es una persona de la tercera edad.")
+}
+
+/* Operadores ternarios
+ 
+ * Hay veces que requerimos utilizar una sentencia if para obtener una variable o regresar
+ * un valor. Nosotros haríamos algo así: */
+
+var mayor: Int = 0
+
+let primerNumero = 17
+let segundoNumero = 3
+
+if primerNumero > segundoNumero {
+    mayor = primerNumero
+} else {
+    mayor = segundoNumero
+}
+
+/* Pero todo lo prodríamos resumir a una sola línea de código: */
+
+mayor = primerNumero > segundoNumero ? primerNumero : segundoNumero
+
+/* En la sección posterior al signo de interrogación, se indicará el valor al ser verdadera
+ * la expresión, después de los dos puntos se colocará el valor al ser falsa.*/
+
+/* Referencias:
+ * Franco, A. (2015). Operadores relacionales. Universidad del País Vasco. Disponible en: http://www.sc.ehu.es/sbweb/fisica3/basico/condicional/condicional.html
+ * IBM. (2019). Expresiones lógicas. Disponible en: https://www.ibm.com/support/knowledgecenter/es/ssw_ibm_i_72/rzasp/rzasp_logicalexpression.htm
+ * Ministerio de Salud. (2019). Ciclo de vida. Disponible en: https://www.minsalud.gov.co/proteccionsocial/Paginas/cicloVida.aspx */
