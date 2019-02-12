@@ -1,0 +1,221 @@
+/* Documento: Unidad I.playground
+ * Autor: Cristian Tafolla Rosales
+ * Asignatura: Swift Intermedio
+ * Semestre: 2019 - 2 */
+
+import UIKit
+
+/* Antes que nada, es necesario decir que comentaré este código como muchos otros
+ * utilizando algunas notaciones sencillas*/
+
+// Este es un comentario de una línea
+
+/* Constantes y variables
+ 
+ * En ambos casos, son espacios reservados en la memoria principal del equipo.
+ * Las constantes y las variables son utilizadas para asociar un nombre con un valor.
+
+ * Constante: Tiene un valor ajustado que no requiere que sea cambiado durante el
+ * "tiempo de vida" de un programa.
+ * Podemos definir las constantes con la palabra reservada let, como en el siguiente
+ * ejemplo: */
+
+let curso = "Swift Intermedio"
+
+/* La sentencia anterior nos indica que existirá una nueva constante llamada curso
+ * y se le asigno el valor Swift Intermedio a dicha constante.
+
+ * En la siguiente línea imprimiremos el valor de dicha constante, la cuál aparecerá
+ * en la consola que se encuentra en la parte inferior de nuestra ventana activa.:*/
+
+print (curso)
+
+/* Variable: En caso de requerir un valor que cambie durante la ejecución del programa,
+ * utilizamos una variable.
+ * Podemos declarar las variables con la palabra reservada var, como en el siguiente
+ * ejemplo: */
+
+var numeroAlumnos = 23
+
+/* Al guardar los valores, vemos que tenemos que brindarle un nombre diferente a cada
+ * uno, como por ejemplo: */
+
+var saludo = "Hola"
+var приветствие = "привет"
+var 宣言 = "私はあなたを愛している"
+var 😄 = "Feliz"
+
+/* Pero lo ideal sería nombrar las variables con un lenguaje entendible por el grupo
+ * de personas que pudisesen verlo, claro, que si queremos que sea algo universal
+ * tendremos que utilizar el inglés, y adicionalmente utilizaremos una notación
+ * denominada CamelCase.
+ * La notación CamelCase separa cada palabra con una mayúscula, y no con espacios
+ * entre las palabras. Hay dos formas de utilizarla: */
+
+var numeroAlumnosAprobados = 20 // Utiliza lowerCamelCase
+
+var NumeroAlumnosReprobados = 1 // Utiliza UpperCamelCase
+
+// Lo mejor es utilizar lowerCamelCase.
+
+
+/* Cabe recalcar que no necesariamente se tiene que imprimir el valor de una variable
+ * o constante sola, sino que también podemos agregar texto de manera contigua.
+ * utilizaremos los símbolos \() , y en medio de los paréntesis podremos el nombre del
+ * espacio de memoria reservado. Esto se llama interpolación. */
+
+print ("Actualmente hay \(numeroAlumnos) alumnos inscritos")
+
+/* Suponiendo que esta variable corresponda al número de alumnos que el curso tiene y
+ * alguno llega a darse de baja, entonces podríamos cambiar el valor de dicha variable
+ * de la siguiente forma: */
+
+numeroAlumnos = 22
+print ("Actualmente hay \(numeroAlumnos) alumnos inscritos")
+
+/* También podemos declarar multiples constantes o variables en la misma línea.*/
+
+let alumnoUno = "Alejandro", alumnoDos = "Julieta", alumnoTres = "Ariel"
+var equipoUno = "Ocupado", equipoDos = "Desocupado", equipoTres = "En mantenimiento"
+
+/* Si quisieramos cambiar el valor de una constante, veremos que saldrá un error.
+ * Descomenta la línea de abajo y observa todo lo que aparece. */
+
+//curso = "Teoría del meme"
+
+/* Como vimos, no es posible cambiar el valor de alguno de las constantes.*/
+
+/* Tipos de datos
+ * Los tipos de datos más comunes en Swft son los siguientes:
+ 
+ * Tipo de dato         Palabra reservada           Propósito
+ 
+ * Entero               Int                         Representa números enteros
+ * Flotantes            Float                       Representa números con punto
+ *                                                  decimal
+ * Double               Double                      Representa números con punto
+ *                                                  decimal, con el doble de
+ *                                                  precisión que los flotantes
+ * Booleano             Bool                        Representa dos valores:
+ *                                                  verdadero y falso
+ * Cadena               String                      Representa texto
+ 
+ * Nosotros podemos ver ejemplos en la parte de abajo: */
+
+var entero: Int = 4
+var flotante: Float = 4.66666666666
+var double: Double = 4.666666666666
+var booleano: Bool = true
+var cadena: String = "iOS Dev Lab"
+
+/* Al agregar nosotros el tipo de la variable que estamos definiendo, hacemos que
+ * nuestra variable tenga tipado fuerte, pero, ¿qué tal si nosotros no definimos
+ * ese tipo? */
+
+var materiaReprobada = "Matemáticas financieras"
+
+/* Aquí utilizamos la inferencia de tipo, donde vemos que no es necesario que
+ * agreguemos el tipo, aunque lo mejor sería que lo hicieramos 🙃*/
+
+/* Se nos presenta el siguiente problema:
+ 
+ * "La población en México ascendía a los 119,938,473 habitantes." (INEGI, 2015)
+ 
+ * Si requiero guardar esa información en una variable, lo hago de esta manera: */
+
+var habitantesMexico: Int = 119938473
+
+/* Lo anterior no me permite leer fácilmente el número de habitantes, pues estamos
+ * acostumbrados a leer las cantidades con comas que separan por miles. Bien,
+ * Swift puede permitirnos hacer lo siguiente:
+ 
+ * "Para 2019, la población en México aumentó a 133,337,506 habitantes." (CountryMeters, 2019)
+ 
+ * Ahora hay que guardar dicha información en la variable: */
+
+habitantesMexico = 133_337_526
+
+/* Dicha notación no cambiará el tipo de la variable que ocupábamos con anterioridad
+ * y, como vemos, es más fácil leerla ahora.*/
+
+/* Operadores
+ 
+ * Operadores aritméticos:
+ 
+ * Ahora hagamos algo diferente. Tenemos la siguiente información:
+ 
+ * "La población masculina actual del país es de 65,757,788 habitantes, correspondiente
+ * al 49.3%." (CountryMeters, 2019)
+ 
+ * Necesitamos saber ahora cuántas mujeres hay actualmente en México. */
+
+var habitantesMujeres: Int = habitantesMexico - 65_757_788
+
+/* Veremos en la barra lateral de resultados que actualmente hay en México 67,579,738
+ * mujeres. Después nos dan más información:
+ 
+ * "La población femenina en México corresponde al 50.7% del total." (CountryMeters, 2019)
+ 
+ * Necesitamos hacer el cálculo para saber si es cierta esta afimación. */
+
+50.7 + 49.3
+
+/* También nos solicitan cuántos habitantes hay por kilómetro cuadrado en el país,
+ * teniendo el siguiente dato:
+ 
+ * "La extensión de la superficie continental de México es de 1,960,189 kilómetros
+ * cuadrados" (INEGI, 2010) */
+
+var superficieMexico: Int = 1_960_189
+
+var densidadPoblacionMexico: Float
+
+// Descomenta la línea de abajo, y verás que hay un error, aunque lógicamente está bien
+
+// densidadPoblacionMexico = habitantesMexico / superficieMexico
+
+/* Es importante recalcar que obtendrás un valor con punto decimal, así que se usa un
+ * casteo, que es una forma de que le indiquemos al compilador que haremos una conversión
+ * para no perder información que nos pueda ser útil o que hayan problemas en nuestro
+ * programa. Lo utilizamos de la siguiente forma: */
+
+densidadPoblacionMexico = Float (habitantesMexico / superficieMexico)
+
+// Vemos que hay 68 personas por kilómetro cuadrado, aproximadamente.
+
+/* Nos brindan más información:
+ 
+ * "La densidad de carreteras en el país corresponde a los 19 kilómetros por kilómetro
+ * cuadrado" (SEMARNAT, 2015).
+
+ * Hagamos otra operación. */
+
+var densidadCarreterasMexico: Int = 19
+
+var carreterasMexico: Int = densidadCarreterasMexico * superficieMexico
+
+/* Asignación compuesta
+ 
+ * Suponiendo que en lo que llevamos hablando aumentó la población en México otros 50
+ * habitantes, habrá que actualizar la variable. */
+
+habitantesMexico = habitantesMexico + 50
+
+/* Pero aumentó otro más, aunque nos da un poco de flojera escribir todo de nuevo, así
+ * que optamos por la siguiente operación: */
+
+habitantesMexico += 1
+
+/* Suponiendo que a alguien lo atropelló un perro, tendremos que disminuir la población
+ * un habitante */
+
+habitantesMexico -= 1
+
+/* Si quisieramos saber cuántos habitantes habría en caso de duplicarse la población,
+ * haríamos lo siguiente: */
+
+habitantesMexico *= 2
+
+/* Pero como no es el caso, hay que regresar a la normalidad: */
+
+habitantesMexico /= 2
