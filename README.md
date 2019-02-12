@@ -1,2 +1,4 @@
 # Swift_Intermedio
-Contenido del curso "Swift Intermedio" del semestre 2019-2
+Bienvenido al curso de Swift Intermedio.
+
+En este curso desarrollarás un prototipo de una aplicación móvil para dispositivos móviles iOS por medio del lenguaje de programación Swift.
