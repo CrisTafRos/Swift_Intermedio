@@ -6,7 +6,7 @@
 
 import UIKit
 
-/* Estructuras de control de selección.
+/* Estructuras selectivas.
  
  * En estas estructuras nosotros podemos tomar decisiones evaluando una expresión lógica,
  * que en pocas palabras es una combinación de constantes, variables o funciones, y según
@@ -149,8 +149,15 @@ mayor = primerNumero > segundoNumero ? primerNumero : segundoNumero
 
 /* En la sección posterior al signo de interrogación, se indicará el valor al ser verdadera
  * la expresión, después de los dos puntos se colocará el valor al ser falsa.*/
+ 
+/* Otro ejemplo puede ser el siguiente: */
+
+var edad = 23
+let respuestaEdad = edad >= 18 ? "Eres mayor de edad" : "No tienes INE :v"
+print(respuestaEdad)
 
 /* Referencias:
  * Franco, A. (2015). Operadores relacionales. Universidad del País Vasco. Disponible en: http://www.sc.ehu.es/sbweb/fisica3/basico/condicional/condicional.html
  * IBM. (2019). Expresiones lógicas. Disponible en: https://www.ibm.com/support/knowledgecenter/es/ssw_ibm_i_72/rzasp/rzasp_logicalexpression.htm
- * Ministerio de Salud. (2019). Ciclo de vida. Disponible en: https://www.minsalud.gov.co/proteccionsocial/Paginas/cicloVida.aspx */
+ * Ministerio de Salud. (2019). Ciclo de vida. Disponible en: https://www.minsalud.gov.co/proteccionsocial/Paginas/cicloVida.aspx 
+ */
