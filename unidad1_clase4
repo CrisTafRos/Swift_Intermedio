@@ -1,0 +1,87 @@
+import UIKit
+
+/* Documento: Unidad1_clase4.playground
+ * Autor: Cristian Tafolla Rosales
+ * Asignatura: Swift Intermedio
+ * Semestre: 2019 -2 */
+
+/* Estructura bàsica de las funciones
+ func nombreDeLaFuncion (parametros) -> tipoRetorno {
+    // cuerpo de una función
+} */
+
+func mostrarNombre(){
+    print("Mi nombre es: Cristian")
+}
+
+// Aquí peso y altura son parámetros
+func calcularIMC(peso: Float, altura: Float){
+    let resultado = peso / (altura * altura)
+    print("Tu IMC es de: \(resultado)")
+}
+
+// Aquí peso y altura son argumentos
+calcularIMC(peso: 68.3, altura: 1.60)
+
+func calcularIMC2(peso: Float, altura: Float){
+    let resultado = peso / (altura * altura)
+    print("Tu IMC es de: \(resultado)")
+    switch resultado {
+    case 0...16.00:
+        print("Tienes delgadez severa")
+    case 16.00...16.99:
+        print("Tienes delgadez moderada")
+    case 17.00...18.49:
+        print("Tienes delgadez aceptable")
+    case 18.50...24.99:
+        print("Tienes peso normal. Sigue así :3")
+    case 25.00...29.99:
+        print("Tienes sobrepeso")
+    case 30.00...34.99:
+        print("Tienes obesidad tipo 1")
+    case 35.00...40.00:
+        print("Tienes obesidad tipo 2")
+    default:
+        print("Tienes obesidad tipo 3")
+    }
+}
+
+calcularIMC2(peso: 69.3, altura: 1.60)
+
+func diHola(a primerPersona: String, tambienA segundaPersona: String){
+    print("Hola a \(primerPersona) y a \(segundaPersona)")
+}
+
+diHola(a: "Phineas", tambienA: "Ferb")
+
+func materiasReprobadas(como materiaObligatoria: String, yTambien materiaOptativa: String){
+    print("Reprobe la materia \(materiaObligatoria) y tambien \(materiaOptativa)")
+}
+
+//materiasReprobadas(materiaObligatoria: "Informática", materiaOptativa: "Seguridad")
+
+materiasReprobadas(como: "Contabilidad", yTambien: "Coaching")
+
+func ubicacionCoordenadas(_ abcisa: Int, _ ordenada: Int){
+    print("El punto A esta en la coordenada (\(abcisa), \(ordenada))")
+}
+
+ubicacionCoordenadas(0, 1)
+
+func sumar(operandoUno: Int, operandoDos: Int) -> Int{
+    return operandoUno + operandoDos
+}
+
+print ("La suma da por resultado: \(sumar(operandoUno: 1, operandoDos: 1))")
+
+let ejemplo = sumar(operandoUno: 3, operandoDos: 4)
+ejemplo
+
+func organizandoEquipos(_ nombreEquipo: String, _ puntuacion: Int = 0){
+    print("El equipo: \(nombreEquipo) tiene: \(puntuacion) puntos.")
+}
+
+organizandoEquipos("Griffindor")
+
+organizandoEquipos("Slyt", 100)
+
