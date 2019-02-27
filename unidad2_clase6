@@ -1,0 +1,88 @@
+import UIKit
+
+/* La idea de crear estructuras de datos es combinar una o más variables dentro de un simple
+ * dato. Estas estructuras guardan una relación entre los datos que la constituyen.
+ 
+ * Tipo de dato estructurado: Entidad nombrada con un sólo modificador, construida por datos
+ * de diferentes tipos, de acuerdo a las reglas definidas.
+ 
+ * Hay estructuras contiguas y estructuras enlazadas.
+ 
+ * Las estructuras contiguas situan sus datos en áreas adyacentes de memoria, según la posición
+ * relativa al principio del ára que contiene la estructura.
+ 
+ * Un ejemplo de estructuras contiguas son las colecciones, las cuales son referencias a múltiples
+ * elementos referenciados como un grupo.*/
+
+/* Las estructuras enlazadas son estructuras cuyos datos no se situan de forma contigua, se
+ * relacionan de manera enlazada para saber cuál es el siguiente dato de la estructura mediante
+ * apuntadores o punteros.
+ 
+ * Estructura (o registro): Estructura de datos formada por la yuxtaposición de elementos que
+ * continen información relativa a un mismo ente.
+ 
+ * A los elementos que componen el registro los denominaremos campos, donde cada uno es de un
+ * determinado tipo, que a su vez puede ser simple o estructurado. Son denomidados por un nombre.*/
+
+/* Consideremos la declaración de Perro como una propiedad: */
+
+struct Perro {
+    var nombre: String
+}
+
+/* Atributo: Característica que aplica a un objeto según lo que refleja.
+ 
+ * Podemos acceder al atributo almacenado en la propiedad, como el nombre de nuestro perro, usando
+ * también un punto para denominar dicho campo: */
+
+let mascotaCristian = Perro(nombre: "Chester")
+print(mascotaCristian.nombre)
+
+/* Método: Funciones que permite efectuar el objeto y sirven dentro del transcurso del programa.
+ 
+ * Podemos también agregar funcionalidad a dicha estructura */
+
+struct Disco {
+    var nombre: String
+    var duracionMinutos: Int
+    func discoSeleccionado() {
+        print("\(nombre) dura aproximadamente \(duracionMinutos) minutos.")
+    }
+}
+
+/* Al estar declarando un nueva estructura, necesitamos hace una instancia de la misma para
+ * ocuparla.
+ 
+ * Instancia: Objeto derivado de algún otro. */
+
+let discoUno = Disco(nombre: "18 Months", duracionMinutos: 49)
+
+discoUno.discoSeleccionado()
+
+/* Inicializadores: Forma de asignar un valor, lo cual regresa una nueva instancia de dicho tipo.
+ * Por ejemplo: */
+
+var cadena = String.init()
+print(cadena)
+
+var entero = Int.init()
+print(entero)
+
+var bool = Bool.init()
+print(bool)
+
+/* Aunque también nosotros podemos inicializar de la siguiente forma: */
+
+var cadenaDos = String()
+print(cadenaDos)
+
+var enteroDos = Int()
+print(enteroDos)
+
+var boolDos = Bool()
+print(boolDos)
+
+/* Referencias:
+ http://robotica.uv.es/pub/Libro/PDFs/CAPI5.pdf
+ http://www.upv.es/amiga/43.htm
+ https://es.ccm.net/contents/409-clase-e-instancia-de-objeto */
