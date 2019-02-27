@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="aplicacionUno" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="90" translatesAutoresizingMaskIntoConstraints="NO" id="hmW-Yh-Fff">
+                                <rect key="frame" x="39.5" y="99" width="296" height="469"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="casino" translatesAutoresizingMaskIntoConstraints="NO" id="FTA-EW-4Ml">
+                                        <rect key="frame" x="28" y="0.0" width="240" height="128"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="128" id="X7b-Qc-aKa"/>
+                                            <constraint firstAttribute="width" constant="240" id="u2a-52-mc0"/>
+                                        </constraints>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="keo-kt-ZZL">
+                                        <rect key="frame" x="0.0" y="218" width="296" height="128"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dado1" translatesAutoresizingMaskIntoConstraints="NO" id="Wpp-J6-shQ">
+                                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="128" id="i5O-To-fk8"/>
+                                                    <constraint firstAttribute="height" constant="128" id="pON-a5-Cdq"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dado2" translatesAutoresizingMaskIntoConstraints="NO" id="jLO-11-Trf">
+                                                <rect key="frame" x="168" y="0.0" width="128" height="128"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="128" id="Aqy-Sb-MUg"/>
+                                                    <constraint firstAttribute="height" constant="128" id="y3z-x8-qOV"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q4g-99-8nh">
+                                        <rect key="frame" x="99" y="436" width="98" height="33"/>
+                                        <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="18"/>
+                                        <state key="normal" title="¡Tiralos!">
+                                            <color key="titleColor" red="0.58081901069999997" green="0.088427625600000004" blue="0.31863921880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="tiralosButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4S2-ft-A32"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="hmW-Yh-Fff" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="41r-YQ-Vdl"/>
+                            <constraint firstItem="hmW-Yh-Fff" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="NL7-Wt-6Uh"/>
+                            <constraint firstItem="hmW-Yh-Fff" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QX8-Dq-VlM"/>
+                            <constraint firstItem="hmW-Yh-Fff" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="eTB-DX-TO5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="dadoImageView" destination="jLO-11-Trf" id="PXn-sz-QJA"/>
+                        <outlet property="otroDadoImageView" destination="Wpp-J6-shQ" id="9zc-j5-Ha5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="casino" width="398" height="398"/>
+        <image name="dado1" width="520" height="520"/>
+        <image name="dado2" width="520" height="520"/>
+    </resources>
+</document>
