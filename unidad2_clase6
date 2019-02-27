@@ -1,0 +1,210 @@
+/* Valores por default
+ * Si nosotros quisieramos inicializar nuestras estructuras de una manera similar a lo visto
+ * anteriormente, requerimos denominar un valor en el que esté inicializado el atributo.
+ * Por ejemplo: Si nosotros tenemos un podómetro (contador de pasos), tendría que iniciar en 0*/
+
+struct Podometro {
+    var cuenta: Int = 0
+}
+
+let podometroCristian = Podometro()
+print(podometroCristian.cuenta)
+
+struct Longitud {
+    var centimetros: Float
+    
+    init(pulgadas: Float){
+        centimetros = pulgadas * 2.54
+    }
+}
+
+let longitudActual = Longitud(pulgadas: 2.54)
+
+print(longitudActual.centimetros)
+
+/* Estructuras de control iterativas*/
+
+for indice in 1...10{
+    print("Hola, tu calificación es: \(indice)")
+    if indice <= 5 {
+        print("Estás reprobado 🥺")
+    } else {
+        print("Pasaste, ya fuchi 😠")
+    }
+}
+
+for _ in 1...5{
+    print("Ánimo :3")
+}
+
+/* Accediendo a colecciones */
+
+let arregloNombres : [String] = ["Alicia", "Beto", "Carlos", "Dionisia", "Epifanio", "Fabrizio", "Guillermo", "Hortencia"]
+
+for nombre in arregloNombres {
+    print("Hola \(nombre), estás invitado a un banquete. 👑")
+}
+
+let diccionarioLista : [String : Bool] = ["Alicia": false, "Beto": true, "Carlos": false, "Dionisia": true, "Epifanio": false, "Fabrizio": true, "Guillermo": false, "Hortencia": true]
+
+for (nombre, asistencia) in diccionarioLista{
+    print("Alumno \(nombre): \(asistencia)")
+}
+
+for (nombre, asistencia) in diccionarioLista{
+    if asistencia == true {
+        print("\(nombre): sí vino")
+    } else {
+        print("\(nombre): no vino")
+    }
+}
+
+/* Programación orientada a objetos
+ 
+ * En la década de los 70s la programación estructurada tuvo un gran auge, pero debido a
+ * la necesidad de tener equipos de desarrollo más productivos y que construyesen proyectos
+ * más fáciles de comprender, corregir y modificar.
+ 
+ * Es por eso que nace esta es una forma especial de programar, cercana a cómo se expresan
+ * las cosas en la vida real. Aún así no es la solución a todos los problemas, pues que
+ * desarrollemos un lenguaje en este paradigma no garantiza que sea barato y/o flexible.
+ 
+ * "La programación orientada a objetos es un método de implementación en el que los
+ * programas se organizan como colecciones cooperativas de objetos, cada uno de los cuales
+ * representa la instancia de una clase, y cuyas clases son, todas ellas, miembros de una
+ * jerarquía de clases unidas mediante relaciones de herencia." (Booch, )
+ 
+ * Módulo: Función que posee un conjunto finito de entradas y salidas que realiza una tarea
+ * en específico. Este posee un método de solución para una tarea que le ha sido encomendada.
+ 
+ * Cohesión: Las uniones de los elementos en un módulo deben ser lo más fuertes posible.
+ * Para lograr esto, todos los elementos tendrán que estar relacionados para realizar UN
+ * SOLO OBJETIVO. También se refiere a la fuerza de relación entre módulos dentro de un
+ * sistema.
+ 
+ * Acoplamiento: Cada módulo debe unirse a los demás con la menor fuerza posible y debe
+ * comunicarse con los otros módulos sólo a través de aquellos parámetros que realmente son
+ * necesarios; el resto de la información se maneja con variables locales. Independencia.
+ 
+ * HAY CUATRO ELEMENTOS FUNDAMENTALES EN ESTE MODELO: *
+ 
+ * Abstracción: Denota las características esenciales de un objeto que lo distiguen de los
+ * demás tipos de objeto, y proporciona así fronteras conceptuales nítidamente definidas
+ * respecto a la perspectiva del observador.
+ 
+ * Encapsulamiento: Proceso de almacenar en un mismo compartimiento los elementos de una
+ * abstracción que constituyen su estructura y su comportamiento. Es decir, los datos miembros
+ * de un objeto sólo pueden ser modificados mediante las operaciones definidas para ese
+ * objeto.
+ 
+ * Modularidad: Propiedad que tiene un sistema que ha sido descompuesto en un conjunto de
+ * módulos cohesivos y débilmente acoplados.
+ 
+ * Herencia: Clasificación u ordenación de abstracciones. Esta nos sirve para crear objetos
+ * que incorporen propiedades y métodos de otros objetos. Así se puede construir un objeto a
+ * partir de otro ya existente, con la posibilidad de que este pueda tomar diferentes formas.
+ * Este último es lo que diferencia a las clases de las estructuras de datos y es la que da
+ * sentido a la POO.
+ 
+ * Polimorfismo: Propuedad que permite a un método u operación tener el mismo nombre en clases
+ * diferentes y actuar en modo distinto en cada una de ellas.
+ 
+ * Objeto *
+ 
+ * Entidad que tiene una función específica de la cual es responsable, y la información
+ * necesaria para cumplir con dicha tarea. Este objeto posee estado, exihibe cierta conducta
+ * y tiene una identidad única.
+ 
+ * Estado: Abarca todas las propiedades (normalmente estáticas) del mismo más los valores
+ * (normalmente dinámicos) de cada una de esas propiedades.
+ 
+ * Conducta (o comportamiento): Es cómo actua y reacciona un objeto en términos de sus
+ * cambios de estado y paso de mensajes. En pocas palabras, su actividad visible y
+ * comprobable exteriormente.
+ 
+ * Identidad: Aquella propiedad de un objeto que lo distingue de todos los demás objetos en
+ * un momento dado.
+ 
+ * Mensaje: Acción de efectuar una llamada a un método, para indicar a un método del
+ * objeto a que realize su tarea.
+ 
+ * Clase *
+ 
+ * Declaraciones o abstracciones de objetos del mismo tipo o categoría. i. e. la definición de
+ * un objeto es su clase. En pocas palabras es la platilla.
+ 
+ * Propiedades (o atributos): Características de los objetos. Normalmente se especifica su
+ * nombre y su tipo.
+ 
+ * Métodos: Funcionalidades asociadas a los objetos, realizan una tarea de dicha clase,
+ * según las instrucciones denominadas.
+ 
+ * Se dice que el objeto es una instancia o ejemplar de una clase cualquiera.
+ * (Instancia viene de la palabra "instace" que en inglés significa ejemplar).
+ 
+ * Las clases y estructuras son muy similares pues pueden definir propiedades, métodos y
+ * definir inicializadores y ambas pueden ser utilizadas como conjuntos de construcción para
+ * nuestra aplicación.
+ 
+ * Nosotros podemos heredar propiedades y métodos de las superclases (o clases padre) a las
+ * subclases (o clases hijo).
+ */
+
+class Mariachi {
+    var traje: String = ""
+    var sombrero: String = ""
+    var sexo: String = ""
+    
+    func bailar(){
+        print("El mariachi loco quiere bailar")
+    }
+}
+
+let mariachiVargas = Mariachi()
+
+mariachiVargas.traje = "Blanco"
+mariachiVargas.sombrero = "Charro"
+mariachiVargas.sexo = "Hombres"
+
+class Instrumentista: Mariachi {
+    var instrumento: String = ""
+    func tocar(){
+        print("Tururu")
+    }
+}
+
+let mariachiFlorToloache = Instrumentista()
+
+mariachiFlorToloache.bailar()
+mariachiFlorToloache.traje = "Rosa"
+mariachiFlorToloache.sombrero = "Charro"
+mariachiFlorToloache.sexo = "Mujeres"
+mariachiFlorToloache.instrumento = "Arpa"
+mariachiFlorToloache.tocar()
+
+class Cantante: Mariachi {
+    var voz: String = ""
+    func cantar(){
+        print("La bikina")
+    }
+}
+
+let mariachiLoco = Cantante()
+
+mariachiLoco.bailar()
+mariachiLoco.traje = "Fucsia"
+mariachiLoco.sombrero = "Charro"
+mariachiLoco.sexo = "Mixto"
+mariachiLoco.voz = "Mezzosoprano"
+
+/* Bibliografía: 
+ * Booch, G. (2001). "Análisis y diseño orientado a objetos. Con aplicaciones". Alhambra Mexicana, S. A.
+ * Meyer, B. (1998). "Construcción de Software Orientado a Objetos". Prentice Hall. 
+ * Peñaloza, E. (2004). "Fundamentos de programación C/C++". Alfaomega. 
+ * Deitel, P. & Deitel, H. (2005). "Java. Cómo programar". Pearson Educación.
+ 
+ * Mesografía
+ * Ordoñez, C. "El Mariachi Orientado a Objetos, Entendiendo el diseño OO". Disponible en: 
+ * https://sg.com.mx/revista/16/mariachi-orientado-objetos
+ * Álvarez, M. (2001). "Qué es la programacion orientada a objetos". Disponible en:
+ * https://desarrolloweb.com/articulos/499.php */
