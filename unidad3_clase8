@@ -1,0 +1,49 @@
+El proyecto está disponible en:
+
+https://github.com/CrisTafRos/PruebaGitHub
+
+Y puede ser clonado desde la liga: 
+
+https://github.com/CrisTafRos/PruebaGitHub.git
+
+Layout
+
+Esquema de distribución de elementos dentro de un diseño. Hay que recordar que no solamente pertenece a las aplicaciones móviles, sino también a las aplicaciones móviles.
+
+La idea es que podamos distribuir los contenidos en específico.
+
+¿Qué es Auto Layout?
+
+Antes se tenía que definir tanto el ancho (width) como el alto (height) de cada vista mediante coordenadas en x, y según la posición que necesitamos que ocupe dentro de la supervista, ocupando la herramienta de autoresizing que aún se mantiene dentro del inspector de tamaño.
+
+Este autoresizing permitía especificar el comportamiento de una vista con respecto de su supervista.
+
+Ahora, se puede delimitar esta UI, indicando posiciones relativas a otros elementos que tengo alrededor, utilizando constraints.
+
+Sistema más eficaz que permite diseñar la UI para una aplicación adaptable de manera automática mediante descripciones matemáticas de las relaciones que existen en los elementos de la interfaz.
+
+¿Qué son los constraints?
+
+Son restricciones que describen la posición y / o el tamaño de una vista que actúan sobre un elemento en concreto o sobre un conjunto de elementos.
+Se pueden añadir entre vistas o sólo en una vista, basándose en posiciones relativas entre una vista y otra.
+Los constraints deben de ser definidos de manera conjunta.
+
+Nota:
+
+Si en algún momento no indicamos los constraints, se dice que tenemos un “layout ambiguo”.
+Si hay constraints que tienen conflictos entre sí, se denomina “constraints insatisfactorios”, es decir, no hay layouts que puedan satisfacer estos constraints definidos.
+
+En cualquier caso, Auto Layout tratará de arreglar dichos inconvenientes (degrade gracefully), pero los resultados pueden llegar a ser impredecibles e incluso desastrosos. 
+
+Hay que aprender a identificar dichas situaciones y cómo resolverlas con el uso de priorities, añadiendo o quitando constraints
+
+¿Por qué hay que utilizar los layouts?
+
+Habrán muchas situaciones en las que nuestra aplicación sufrirá cambios durante el tiempo de ejecución, como:
+Orientación: Cuando el usuario gira los dispositivos de vertical (portrait) a horizontal (landscape)
+Internacionalización: Deberán utilizar diferentes lenguajes para los que la aplicación fue desarrollada, pero nos estamos centrando en la longitud del contenido que puede ser tanto más larga o corta de lo que se pensó en un principio.
+
+Las aplicaciones pueden ejecutarse en diferentes tamaños de pantalla.
+Hay que recordar que las aplicaciones pueden ser universales o no, es decir, pueden utilizarse tanto en iPhone y iPad.
+Otro detalle a recalcar es la vista multitareas o en simultáneo, detalle que nos hace recordar que no solo existen los tamaños de pantalla ya predefinidos, sino que también existen otros tamaños.
+La idea de autolayout es que debemos describir cómo nuestra interfaz debe adaptarse a cualquiera de estas situaciones, ayudándonos también al momento de desarrollar, pues hace interfaces flexibles con mucho menos código que otros layouts y en menor tiempo.
