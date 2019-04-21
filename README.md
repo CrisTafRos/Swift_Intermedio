@@ -13,3 +13,5 @@ En este apartado te dejo dos referencias que pueden ayudarte, en caso de que qui
 <a href="https://github.com/BohdanOrlov/iOS-Developer-Roadmap">Mobile Developer Roadmap 2018</a>
 
 <a href="https://github.com/godrm/mobile-developer-roadmap/blob/master/README.md?fbclid=IwAR2rG4quCIvxqxy0ddyQuh2GPtx-ALp1YgdcNMu9Ita3_Z0YoQKfrOwFTlc">Mobile Developer Roadmap 2017</a>
+
+El segundo es el que habíamos visualizado en clase.
