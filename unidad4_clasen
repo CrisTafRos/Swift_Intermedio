@@ -2,103 +2,94 @@ import Foundation
 
 //Declarando enumeraciones, para únicos posibles valores
 
-enum PuntosCompas {
-    case Norte, Sur, Este, Oeste
+enum PuntosCardinales {
+    case Norte
+    case Sur
+    case Este
+    case Oeste
 }
 
-print(PuntosCompas.Norte)
+print(PuntosCardinales.Norte)
 
-enum ruedas {
-    case una
-    case dos
-    case tres
-    case cuatro
+enum Semestres {
+    case primero, segundo, tercero, cuarto, quinto, sexto, septimo, octavo, limbo
 }
 
-print(ruedas.una)
+print(Semestres.octavo)
 
-//Raw value, valor numérico 
-
-enum animales: Int {
-    case uno = 1, dos = 2, tres = 3
+enum AnimalZoo: Int {
+    case pinguino = 1, leon = 2, cebra = 3
 }
 
-print(animales.dos.rawValue)
-
-var numero: ruedas
-numero = .una
+print(AnimalZoo.leon.rawValue)
 
 // Trabajando con enums, diferentes flujos en función de un valor enumerado
 
-var numRuedas: ruedas = .dos
-switch numRuedas{
-    case .una: print("Monociclo")
-    case .dos: print("Bicicleta")
-    case .tres: print("Triciclo")
-    case .cuatro: print("Cuatrimoto")
+enum RuedasVehiculo {
+    case una, dos, tres, cuatro
 }
 
-/*Nulo en programación
+var vehiculoNuevo: RuedasVehiculo = .dos
+
+switch vehiculoNuevo{
+case .una:
+    print("Es un monociclo")
+case .dos:
+    print("Es una motocicleta")
+case .tres:
+    print("Es un triciclo")
+case .cuatro:
+    print("Es una troca")
+}
+
+/* Nulo en programación
     Valor especial que representa a la "nada"
     Dirección de memoria tan baja 
  */
 
 var valorNoNulo: Int = 1
 
-var valorNulo: Int? //Se le puede asignar valor nulo aquí o después
+var valorNulo: Int? // Se le puede asignar un valor nulo desde aquí
 
-var a: Int? = nil
+valorNulo = 1
 
-a = 1
-print (a!)
+valorNulo = nil
 
-a = nil
-print (a)
+print(valorNulo)
 
 //Alcance de las variables en Swift
 
 //¿Qué tal si compartimos un dato?
 
-//https://www.hackingwithswift.com/read/0/18/static-properties-and-methods
-
-struct AngelesAzulesFan {
-    static var cancionFavorita = "Toma que toma"
+struct MaroonFivers {
     var nombre: String
     var edad: Int
+    static var cancionFavorita = "She will be loved"
 }
 
-let superFanUno = AngelesAzulesFan(nombre: "Cristian", edad: 23)
-print(AngelesAzulesFan.cancionFavorita)
+let superFanUno = MaroonFivers(nombre: "Cristian", edad: 23)
+print(superFanUno.nombre)
 
-let superFanDos = AngelesAzulesFan(nombre: "Arturo", edad: 21)
-print(AngelesAzulesFan.cancionFavorita)
+print(MaroonFivers.cancionFavorita)
+
+let superFanDos = MaroonFivers(nombre: "Arturo", edad: 21)
+print(MaroonFivers.cancionFavorita)
 
 // https://stackoverflow.com/questions/37701187/when-to-use-static-constant-and-variable-in-swift
-/*
-class Vehiculo {
-    var numero = 0
-    init (){
-        Vehiculo.numero +=1
-    }
-}
-let bici = Vehiculo()
-print(Vehiculo.numero)
-
-let carro = Vehiculo()
-print(Vehiculo.numero)
-*/
 
 //¿Qué tal si queremos mantener un dato aquí?
-class Animal {
-    static var numero = 0
 
-    init () {
-        Animal.numero += 1
+class Mascota {
+    static var numero = 0
+    
+    init() {
+        Mascota.numero += 1
     }
 }
 
-let perro = Animal()
-print(Animal.numero)
-let gato = Animal()
-print(Animal.numero)
-
+let perro = Mascota()
+print(Mascota.numero)
+let gato = Mascota()
+print(Mascota.numero)
+let hamtaro = Mascota()
+print(Mascota.numero)
