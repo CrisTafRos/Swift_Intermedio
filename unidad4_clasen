@@ -1,0 +1,104 @@
+import Foundation
+
+//Declarando enumeraciones, para únicos posibles valores
+
+enum PuntosCompas {
+    case Norte, Sur, Este, Oeste
+}
+
+print(PuntosCompas.Norte)
+
+enum ruedas {
+    case una
+    case dos
+    case tres
+    case cuatro
+}
+
+print(ruedas.una)
+
+//Raw value, valor numérico 
+
+enum animales: Int {
+    case uno = 1, dos = 2, tres = 3
+}
+
+print(animales.dos.rawValue)
+
+var numero: ruedas
+numero = .una
+
+// Trabajando con enums, diferentes flujos en función de un valor enumerado
+
+var numRuedas: ruedas = .dos
+switch numRuedas{
+    case .una: print("Monociclo")
+    case .dos: print("Bicicleta")
+    case .tres: print("Triciclo")
+    case .cuatro: print("Cuatrimoto")
+}
+
+/*Nulo en programación
+    Valor especial que representa a la "nada"
+    Dirección de memoria tan baja 
+ */
+
+var valorNoNulo: Int = 1
+
+var valorNulo: Int? //Se le puede asignar valor nulo aquí o después
+
+var a: Int? = nil
+
+a = 1
+print (a!)
+
+a = nil
+print (a)
+
+//Alcance de las variables en Swift
+
+//¿Qué tal si compartimos un dato?
+
+//https://www.hackingwithswift.com/read/0/18/static-properties-and-methods
+
+struct AngelesAzulesFan {
+    static var cancionFavorita = "Toma que toma"
+    var nombre: String
+    var edad: Int
+}
+
+let superFanUno = AngelesAzulesFan(nombre: "Cristian", edad: 23)
+print(AngelesAzulesFan.cancionFavorita)
+
+let superFanDos = AngelesAzulesFan(nombre: "Arturo", edad: 21)
+print(AngelesAzulesFan.cancionFavorita)
+
+// https://stackoverflow.com/questions/37701187/when-to-use-static-constant-and-variable-in-swift
+/*
+class Vehiculo {
+    var numero = 0
+    init (){
+        Vehiculo.numero +=1
+    }
+}
+let bici = Vehiculo()
+print(Vehiculo.numero)
+
+let carro = Vehiculo()
+print(Vehiculo.numero)
+*/
+
+//¿Qué tal si queremos mantener un dato aquí?
+class Animal {
+    static var numero = 0
+
+    init () {
+        Animal.numero += 1
+    }
+}
+
+let perro = Animal()
+print(Animal.numero)
+let gato = Animal()
+print(Animal.numero)
+
