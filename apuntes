@@ -1,0 +1,511 @@
+/* Documento: sesionUno.playground
+ * Autor: Cristian Tafolla Rosales
+ * Asignatura: Desarrollo con Swift
+ * Semestre: 2020 - 1 */
+
+import UIKit
+
+/* Antes que nada, es necesario decir que comentaré este código como muchos otros
+ * utilizando algunas notaciones sencillas*/
+
+// Este es un comentario de una línea
+
+/* Constantes y variables
+ 
+ * En ambos casos, son espacios reservados en la memoria principal del equipo.
+ * Las constantes y las variables son utilizadas para asociar un nombre con un valor.
+
+ * Constante: Tiene un valor ajustado que no requiere que sea cambiado durante el
+ * "tiempo de vida" de un programa, siendo más claros y seguros.
+ * Podemos definir las constantes con la palabra reservada let, como en el siguiente
+ * ejemplo: */
+
+let curso = "Desarrollo con Swift"
+
+/* La sentencia anterior nos indica que existirá una nueva constante llamada curso
+ * y se le asigno el valor Desarrollo con Swift a dicha constante.
+
+ * En la siguiente línea imprimiremos el valor de dicha constante, la cuál aparecerá
+ * en la consola que se encuentra en la parte inferior de nuestra ventana activa.:*/
+
+print (curso)
+
+/* Variable: En caso de requerir un valor que cambie durante la ejecución del programa,
+ * utilizamos una variable.
+ * Podemos declarar las variables con la palabra reservada var, como en el siguiente
+ * ejemplo: */
+
+var numeroAlumnos = 6
+
+/* Adicionalmente, vemos que Swift usa inferencia de tipos para seguir
+ * trabajando con el tipo adecuado, al declarar una constante o variable con
+ * valor inicial.
+
+ * Suponiendo que tenemos la siguiente instrucción: */
+
+let pi = 3 + 0.14159
+
+/* El valor literal 3 no tiene un tipo explícito, así que se tomará el tipo más
+ * apropiado para almacenar este valor, que en este caso es Double.*/
+
+/* Al guardar los valores, vemos que tenemos que brindarle un nombre diferente a cada
+ * uno, como por ejemplo: */
+
+var saludo = "Hola"
+var приветствие = "привет"
+var 宣言 = "私はあなたを愛している"
+var 😄 = "Feliz"
+
+/* Estos nombres pueden contener cualquier caracter, incluyendo los caracteres Unicode.
+
+ * Pero lo ideal sería nombrar las variables con un lenguaje entendible por el grupo
+ * de personas que pudisesen verlo, claro, que si queremos que sea algo universal
+ * tendremos que utilizar el inglés, y adicionalmente utilizaremos una notación
+ * denominada CamelCase.
+ * La notación CamelCase separa cada palabra con una mayúscula, y no con espacios
+ * entre las palabras. Hay dos formas de utilizarla: */
+
+var numeroAlumnosAprobados = 20 // Utiliza lowerCamelCase
+
+var NumeroAlumnosReprobados = 1 // Utiliza UpperCamelCase
+
+// Lo mejor es utilizar lowerCamelCase.
+
+/* Cabe recalcar que no necesariamente se tiene que imprimir el valor de una variable
+ * o constante sola, sino que también podemos agregar texto de manera contigua.
+ * Hay dos formas de hacerlo:
+ * 1. Concatenación: Utilizaremos el símbolo "+" entre las cadenas de caracteres.
+ * Ejemplo: */
+
+print ("Hola a los " + numeroAlumnos + " del semestre actual")
+
+/* 2. Interpolación: Utilizaremos los símbolos \() , y en medio de los paréntesis 
+ * podremos el nombre del espacio de memoria reservado. Ejemplo: */
+
+print ("Actualmente hay \(numeroAlumnos) alumnos inscritos")
+
+/* Suponiendo que esta variable corresponda al número de alumnos que el curso tiene y
+ * en caso de que lleguen más, entonces podríamos cambiar el valor almacenado en dicha 
+ * variable de la siguiente forma: */
+
+numeroAlumnos = 22
+print ("Actualmente hay \(numeroAlumnos) alumnos inscritos")
+
+/* También podemos declarar multiples constantes o variables en la misma línea.*/
+
+let alumnoUno = "Alejandro", alumnoDos = "Julieta", alumnoTres = "Ariel"
+var equipoUno = "Ocupado", equipoDos = "Desocupado", equipoTres = "En mantenimiento"
+
+/* Si quisieramos cambiar el valor de una constante, veremos que saldrá un error.
+ * Descomenta la línea de abajo y observa todo lo que aparece. */
+
+//curso = "Teoría del meme"
+
+/* Como vimos, no es posible cambiar el valor de alguno de las constantes.*/
+
+/* Tipos de datos
+ * Los tipos de datos más comunes en Swift son los siguientes:
+ 
+ * Tipo de dato         Palabra reservada           Propósito
+ 
+ * Entero               Int                         Representa números enteros
+ * Flotantes            Float                       Representa números con punto
+ *                                                  decimal (6 decimales).
+ * Double               Double                      Representa números con punto
+ *                                                  decimal, con el doble de
+ *                                                  precisión que los flotantes
+ *						    (15 decimales)
+ * Booleano             Bool                        Representa dos valores:
+ *                                                  verdadero y falso (true / 
+ *						    false)
+ * Cadena               String                      Representa texto
+ 
+ * Nosotros podemos ver ejemplos en la parte de abajo: */
+
+var entero: Int = 4
+var flotante: Float = 4.66666666666
+var double: Double = 4.666666666666
+var booleano: Bool = true
+var cadena: String = "iOS Dev Lab"
+
+/* Al agregar nosotros el tipo de la variable que estamos definiendo, hacemos que
+ * nuestra variable tenga tipado fuerte. Aprovechando esta cualidad del lenguaje,
+ * podemos ser más claros con los tipos de valor para trabajar y evitar errores.
+ 
+ * Pero, ¿qué tal si nosotros no definimos ese tipo? */
+
+var materiaReprobada = "Matemáticas financieras"
+
+/* Aquí utilizamos la inferencia de tipo, donde vemos que no es necesario que
+ * agreguemos el tipo, aunque lo mejor sería que lo hicieramos 🙃*/
+
+/* Anotaciones de tipo
+ * Podemos declarar claramente el tipo de valor que almacenará una constante o 
+ * una variable antes de incluir un valor.
+ * Por ejemplo: */
+
+var mensajeBienvenido: String
+
+// para despues continuar asignando valores:
+
+mensajeBienvenido = "¡Qué tal todos!"
+
+/* De igual forma podemos definir múltiples variables con el mismo tipo sobre
+ * la misma línea de código, de manera contigua al nombre de la variable final*/
+
+// Algunos ejemplos simples:
+
+/* Se nos presenta el siguiente problema:
+ 
+ * "La población en México ascendía a los 119,938,473 habitantes." (INEGI, 2015)
+ 
+ * Si requiero guardar esa información en una variable, lo hago de esta manera: */
+
+var habitantesMexico: Int = 119938473
+
+/* Lo anterior no me permite leer fácilmente el número de habitantes, pues estamos
+ * acostumbrados a leer las cantidades con comas que separan por miles. Bien,
+ * Swift puede permitirnos hacer lo siguiente:
+ 
+ * "Para 2019, la población en México aumentó a 133,337,506 habitantes." (CountryMeters, 2019)
+ 
+ * Ahora hay que guardar dicha información en la variable: */
+
+habitantesMexico = 133_337_526
+
+/* Dicha notación no cambiará el tipo de la variable que ocupábamos con  
+ * anterioridad y, como vemos, es más fácil leerla ahora.*/
+
+/* Operadores: Símbolos especiales utilizados para cambiar o combinar valores
+ 
+ * Operadores aritméticos:
+ 
+ * Ahora hagamos algo diferente. Tenemos la siguiente información:
+ 
+ * "La población masculina actual del país es de 65,757,788 habitantes, correspondiente
+ * al 49.3%." (CountryMeters, 2019)
+ 
+ * Necesitamos saber ahora cuántas mujeres hay actualmente en México. */
+
+var habitantesMujeres: Int = habitantesMexico - 65_757_788
+
+/* Veremos en la barra lateral de resultados que actualmente hay en México 67,579,738
+ * mujeres. Después nos dan más información:
+ 
+ * "La población femenina en México corresponde al 50.7% del total." (CountryMeters, 2019)
+ 
+ * Necesitamos hacer el cálculo para saber si es cierta esta afimación. */
+
+50.7 + 49.3
+
+/* También nos solicitan cuántos habitantes hay por kilómetro cuadrado en el país,
+ * teniendo el siguiente dato:
+ 
+ * "La extensión de la superficie continental de México es de 1,960,189 kilómetros
+ * cuadrados" (INEGI, 2010) */
+
+var superficieMexico: Int = 1_960_189
+
+var densidadPoblacionMexico: Float
+
+// Descomenta la línea de abajo, y verás que hay un error, aunque lógicamente está bien
+
+// densidadPoblacionMexico = habitantesMexico / superficieMexico
+
+/* Es importante recalcar que obtendrás un valor con punto decimal, así que se usa un
+ * casteo, que es una forma de que le indiquemos al compilador que haremos una conversión
+ * para no perder información que nos pueda ser útil o que hayan problemas en nuestro
+ * programa. Lo utilizamos de la siguiente forma: */
+
+densidadPoblacionMexico = Float (habitantesMexico / superficieMexico)
+
+// Vemos que hay 68 personas por kilómetro cuadrado, aproximadamente.
+
+/* Nos brindan más información:
+ 
+ * "La densidad de carreteras en el país corresponde a los 19 kilómetros por kilómetro
+ * cuadrado" (SEMARNAT, 2015).
+
+ * Hagamos otra operación. */
+
+var densidadCarreterasMexico: Int = 19
+
+var carreterasMexico: Int = densidadCarreterasMexico * superficieMexico
+
+/* Asignación compuesta
+ 
+ * Suponiendo que en lo que llevamos hablando aumentó la población en México otros 50
+ * habitantes, habrá que actualizar la variable. */
+
+habitantesMexico = habitantesMexico + 50
+
+/* Pero aumentó otro más, aunque nos da un poco de flojera escribir todo de nuevo, así
+ * que optamos por la siguiente operación: */
+
+habitantesMexico += 1
+
+/* Suponiendo que a alguien lo atropelló un perro, tendremos que disminuir la población
+ * un habitante */
+
+habitantesMexico -= 1
+
+/* Si quisieramos saber cuántos habitantes habría en caso de duplicarse la población,
+ * haríamos lo siguiente: */
+
+habitantesMexico *= 2
+
+/* Pero como no es el caso, hay que regresar a la normalidad: */
+
+habitantesMexico /= 2
+
+/* Supongamos que vamos a una reunión, donde tenemos que repartir bitácoras para reporte.
+ * Hay 6 asistentes, tenemos que saber cuántas bitácoras restan después de repartir entre
+ * todos de manera equitativa*/
+
+let numeroAgendas: Int = 50
+let numeroAsistentes: Int = 6
+sobrante = numeroAgendas % numeroAsistentes
+print ("Nos sobran \(numeroAgendas) agendas y las guardaremos en la bodega.")
+
+
+
+/* Operadores relacionales: Símbolos ocupados para comparar dos valores
+ 
+ * Operador         Significado
+ * ==               Igual que
+ * >                Mayor que
+ * >=               Mayor o igual que
+ * <                Menor que
+ * <=               Menor o igual que
+ * !=               Diferente de	*/
+
+/* Estructuras selectivas.
+ 
+ * En estas estructuras nosotros podemos tomar decisiones evaluando una expresión lógica,
+ * que en pocas palabras es una combinación de constantes, variables o funciones, y según
+ * el resultado se realizará una acción u otra.
+ 
+ * Ese resultado es un valor booleano.
+ 
+ * Estas estructuras selectivas pueden ser:
+ * · Simples
+ * · Dobles
+ * · Múltiples
+ 
+ * Alternativa Simple
+ 
+ * También se le conoce como si - entonces y ejecuta una acción al cumplir una condición.
+ * Un ejemplo sencillo: "SI esta nublado, ENTONCES lloverá"
+ 
+ * Si la condición es verdadera, entonces se ejecuta la acción.
+ * En caso contrario, no hará nada.
+ 
+ * Veamos el siguiente ejemplo: */
+
+var minutosTranscurridos = 15
+
+if minutosTranscurridos <= 20 {
+    print("OK, tienes tu asistencia.")
+}
+
+/* Alternativa Doble
+ 
+ * A diferencia del ejemplo anterior, este no está tan limitado y permite elegir entre
+ * dos opciones o alternativas posibles, según se cumpla o no la condicion.
+ 
+ * Si la condición es verdadera, entonces se ejecutará una acción.
+ * De lo contrario, se ejecutará otra.
+ 
+ * Veamos el siguiente ejemplo: */
+
+if minutosTranscurridos <= 20 {
+    print("OK, tienes tu asistencia.")
+} else {
+    print("Tienes retardo.")
+}
+
+/* También podemos declarar más bloques de código para evaluar cierto número de
+ * condiciones, tal como se puede ver en el siguiente ejemplo: */
+
+minutosTranscurridos = 62
+
+if minutosTranscurridos <= 20 {
+    print("OK, tienes tu asistencia.")
+} else if minutosTranscurridos <= 60{
+    print("Tienes retardo.")
+} else {
+    print("Rayos. Al menos viniste y tienes salud.")
+}
+
+/* Alternativa Múltiple
+ 
+ * En ocasiones se necesita que existan más de dos opciones posibles. Claro que se
+ * podría solucionar como en el caso anterior, pero al ser muchas opciones puede ser
+ * un problema de escritura y legibilidad.
+ 
+ * La estructura de decisión múltiple, o caso de, permitirá que evaluemos una expresión que
+ * podrá tomar diversos valores distintos. Según sea el caso, se realizará alguna de las
+ * acciones posibles.
+ 
+ * Véase el siguiente ejemplo: */
+
+let semestre = 5
+
+switch semestre {
+    case 1:
+        print("Tus materias son: Algoritmos, Algebra Lineal, Info I")
+    case 3:
+        print("Tus materias son: Derecho, Estructura de datos, Info III")
+    case 5:
+        print("Tus materias son: Finanzas Coorporativas, Mates Discretas, Info V")
+    default:
+        print("Posiblemente debas alguna materia aún")
+}
+
+/* También podemos evaluar múltiples condiciones a la vez: */
+
+let letrita = "z"
+
+switch letrita {
+    case "a", "e", "i", "o", "u":
+        print("Es una vocal")
+    default:
+        print("Es una consonante")
+}
+
+/* Operadores de rango o intervalo
+ * Swift ofrece dos operadores de rango o intervalo diferentes, que son una forma más corta
+ * de expresar una serie de números 
+
+ * A) Operador de intervalo cerrado: Define un rango de valores desde un número "a" hasta 
+ * un número "b", incluyendo los valores que se encuentren entre "a" y "b".
+
+ * B) Operador de intervalo medianamente abierto: Define un rango de valores de un número
+ * "a" hasta "b", sin incluir el número "b". Como en el caso anterior, en este conjunto de 
+ * numeros se incluyen los valores entre "a" y "b"*/
+
+let edad: Int = 18
+
+switch edad {
+    case 0...5:
+        print("El paciente está en la primer infancia.")
+    case 6...11:
+        print("El paciente es un infante.")
+    case 12...18:
+        print("El paciente es un adolescente.")
+    case 18..<59:
+        print("El paciente es un adulto.")
+    default:
+        print("El paciente es una persona de la tercera edad.")
+}
+
+/* Operadores ternarios
+ 
+ * Hay veces que requerimos utilizar una sentencia if para obtener una variable o regresar
+ * un valor. Nosotros haríamos algo así: */
+
+var mayor: Int = 0
+
+let primerNumero = 17
+let segundoNumero = 3
+
+if primerNumero > segundoNumero {
+    mayor = primerNumero
+} else {
+    mayor = segundoNumero
+}
+
+/* Pero todo lo prodríamos resumir a una sola línea de código: */
+
+mayor = primerNumero > segundoNumero ? primerNumero : segundoNumero
+
+/* En la sección posterior al signo de interrogación, se indicará el valor al ser verdadera
+ * la expresión, después de los dos puntos se colocará el valor al ser falsa.*/
+ 
+/* Otro ejemplo puede ser el siguiente: */
+
+var edad = 23
+let respuestaEdad = edad >= 18 ? "Eres mayor de edad" : "No tienes INE :v"
+print(respuestaEdad)
+
+-----
+
+/* Estructura bàsica de las funciones
+ func nombreDeLaFuncion (parametros) -> tipoRetorno {
+    // cuerpo de una función
+} */
+
+func mostrarNombre(){
+    print("Mi nombre es: Cristian")
+}
+
+// Aquí peso y altura son parámetros
+func calcularIMC(peso: Float, altura: Float){
+    let resultado = peso / (altura * altura)
+    print("Tu IMC es de: \(resultado)")
+}
+
+// Aquí peso y altura son argumentos
+calcularIMC(peso: 68.3, altura: 1.60)
+
+func calcularIMC2(peso: Float, altura: Float){
+    let resultado = peso / (altura * altura)
+    print("Tu IMC es de: \(resultado)")
+    switch resultado {
+    case 0...16.00:
+        print("Tienes delgadez severa")
+    case 16.00...16.99:
+        print("Tienes delgadez moderada")
+    case 17.00...18.49:
+        print("Tienes delgadez aceptable")
+    case 18.50...24.99:
+        print("Tienes peso normal. Sigue así :3")
+    case 25.00...29.99:
+        print("Tienes sobrepeso")
+    case 30.00...34.99:
+        print("Tienes obesidad tipo 1")
+    case 35.00...40.00:
+        print("Tienes obesidad tipo 2")
+    default:
+        print("Tienes obesidad tipo 3")
+    }
+}
+
+calcularIMC2(peso: 69.3, altura: 1.60)
+
+func diHola(a primerPersona: String, tambienA segundaPersona: String){
+    print("Hola a \(primerPersona) y a \(segundaPersona)")
+}
+
+diHola(a: "Phineas", tambienA: "Ferb")
+
+func materiasReprobadas(como materiaObligatoria: String, yTambien materiaOptativa: String){
+    print("Reprobe la materia \(materiaObligatoria) y tambien \(materiaOptativa)")
+}
+
+//materiasReprobadas(materiaObligatoria: "Informática", materiaOptativa: "Seguridad")
+
+materiasReprobadas(como: "Contabilidad", yTambien: "Coaching")
+
+func ubicacionCoordenadas(_ abcisa: Int, _ ordenada: Int){
+    print("El punto A esta en la coordenada (\(abcisa), \(ordenada))")
+}
+
+ubicacionCoordenadas(0, 1)
+
+func sumar(operandoUno: Int, operandoDos: Int) -> Int{
+    return operandoUno + operandoDos
+}
+
+print ("La suma da por resultado: \(sumar(operandoUno: 1, operandoDos: 1))")
+
+let ejemplo = sumar(operandoUno: 3, operandoDos: 4)
+ejemplo
+
+func organizandoEquipos(_ nombreEquipo: String, _ puntuacion: Int = 0){
+    print("El equipo: \(nombreEquipo) tiene: \(puntuacion) puntos.")
+}
+
+organizandoEquipos("Griffindor")
+
+organizandoEquipos("Slyt", 100)
