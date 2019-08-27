@@ -337,6 +337,22 @@ if minutosTranscurridos <= 20 {
     print("Rayos. Al menos viniste y tienes salud.")
 }
 
+/* Operadores lógicos
+ * Modifican o combinan los valores lógicos "true" y "false".
+ 
+ * Hay 3 operadores lógicos estándar que soporta Swift:
+ 
+ * Operador         Nombre          Propósito
+ * !                NOT             Invierte un valor booleano: true pasa a
+ *                                  ser false, false pasa a ser true.
+ * &&               AND             Expresión lógica donde ambos valores
+ *                                  tienen que ser true para que toda la 
+ *                                  expresión llegue a ser verdadera.
+ * ||               OR              Expresión lógica donde si uno de los
+ *                                  valores comparados llega a ser verdadero
+ *                                  la expresión será verdadera. 
+ * Ejemplos: */
+
 /* Alternativa Múltiple
  
  * En ocasiones se necesita que existan más de dos opciones posibles. Claro que se
@@ -428,7 +444,22 @@ var edad = 23
 let respuestaEdad = edad >= 18 ? "Eres mayor de edad" : "No tienes INE :v"
 print(respuestaEdad)
 
------
+/* Estructuras de repetición
+ * Bucle For-In
+ * Se utiliza para hacer iteraciones en una secuencia, como en elementos de un 
+ * arreglo, rango de número o caracteres en una cadena.
+ 
+ * Ejemplo con rango: */
+ 
+ for indice in 1...10 {
+    print("Bienvenido terrícola número \(indice)")
+ }
+ 
+ // Ejemplo con arreglo
+ 
+let invitados = ["Hugo", "Paco", "Luis", "Tribilin", "Miguelito", "Paolino Paperino"]
+
+for nombre
 
 /* Estructura bàsica de las funciones
  func nombreDeLaFuncion (parametros) -> tipoRetorno {
