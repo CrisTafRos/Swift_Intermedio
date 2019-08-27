@@ -114,10 +114,10 @@ var equipoUno = "Ocupado", equipoDos = "Desocupado", equipoTres = "En mantenimie
  * Double               Double                      Representa números con punto
  *                                                  decimal, con el doble de
  *                                                  precisión que los flotantes
- *						    (15 decimales)
+ *						                                            (15 decimales)
  * Booleano             Bool                        Representa dos valores:
  *                                                  verdadero y falso (true / 
- *						    false)
+ *						                                            false)
  * Cadena               String                      Representa texto
  
  * Nosotros podemos ver ejemplos en la parte de abajo: */
@@ -459,7 +459,66 @@ print(respuestaEdad)
  
 let invitados = ["Hugo", "Paco", "Luis", "Tribilin", "Miguelito", "Paolino Paperino"]
 
-for nombre
+for gorron in invitados {
+    print("Te invito a mi fiesta. \(gorron)")
+}
+
+/* Si no necesitamos un valor en cada secuencia, podemos ignorarlos y poner un guión
+ * bajo en vez del nombre de la variable.*/
+ 
+let base = 2
+let potencia = 8
+var acumulador = 1
+
+for _ in 1...potencia {
+    acumulador *= base
+}
+
+/* Arreglo: Grupo o colección finita, homogénea y ordenada de
+ * elementos.
+ * Es un conjunto de datos homogéneos que se encuentran ubicados
+ * de forma consecutiva en la memoria primaria (RAM). */
+    
+let alfabetoGriego = ["Alfa", "Beta", "Gama", "Delta", "Epsilon", "Dseta", "Eta", "Theta"]
+
+/* ¿Qué tal si necesitamos saber en qué índice se encuentra almacenado un valor? */
+
+let potencias : [Int] = [1, 3, 9, 27, 81, 243, 729, 2187, 6561, 19683, 59049]
+
+/* enumerated()
+*  Regresa una secuencia de pares (n, x), donde n representa un entero consecutivo iniciando
+*  en cero y x representa un elemento de dicha secuencia. */
+
+for (n, potencia) in potencias.enumerated(){
+    print("3^\(n) = \(potencia)")
+}
+
+/* ¿Qué tal si necesitamos cada letra de una cadena? */
+
+for caracter in "Compumundohipermegared"{
+   print(caracter)
+}
+
+/* Estructura repetitiva while
+ * Este bucle se repite hasta que una condición sea falsa. Es principalmente usada cuando
+ * se necesita repetir algo, pero no se tiene un número específico de veces. Esta
+ * condición se evalua al INICIO del bucle. */
+
+var tope : Int = 0
+while (tope < 4) {
+   print (tope)
+   tope += 1
+}
+
+/* Estructura repetitiva repeat-while
+ * Este bucle se ve casi igual que el anterior, pero la condición se evalua al FINAL del
+ * dicho ciclo. Recuerda que se ejecuta al menos una vez. */
+
+var acumulado : Int = 0
+
+repeat {
+   print (acumulado)
+} while (acumulado < 2)
 
 /* Estructura bàsica de las funciones
  func nombreDeLaFuncion (parametros) -> tipoRetorno {
